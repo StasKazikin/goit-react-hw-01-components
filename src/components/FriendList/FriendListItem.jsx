@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import s from './FriendList.module.css';
 
 function FriendListItem({ friend }) {
   return (
-    <li className="item">
+    <li className={s.item}>
       <span
-        className={friend.isOnline ? 'status isOnline' : 'status isOffline'}
+        // className={friend.isOnline ? {s.isOnline} : {s.isOffline}}
+        className={friend.isOnline ? s.statusOnline : s.statusOffline}
       ></span>
       <img
-        className="avatar"
+        className={s.avatar}
         src={friend.avatar}
         alt={friend.name}
         width="48"
       />
-      <p className="name">{friend.name}</p>
+      <p className={s.name}>{friend.name}</p>
     </li>
   );
 }
